@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universal Converter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <h1>Universal Converter</h1>
+  <div class="tabs" id="tabs"></div>
+
+  <div class="card">
+    <label for="amount">Amount</label>
+    <input id="amount" type="number" inputmode="decimal" value="1" step="any">
+
+    <div class="row" style="margin-top:12px">
+      <div><label for="from">From</label><select id="from"></select></div>
+      <div><label for="to">To</label><select id="to"></select></div>
+    </div>
+    <div class="swap-wrap"><button class="swap" id="swap">⇅ Swap</button></div>
+
+    <div class="result">
+      <div class="big" id="out">–</div>
+      <div class="small" id="rateLine"></div>
+      <div class="actions">
+        <button class="btn" id="copy">Copy result</button>
+        <button class="btn hidden" id="refresh">Refresh rates</button>
+      </div>
+    </div>
+
+    <div class="custom hidden" id="customBox">
+      <label for="customRate">Custom rate (optional): 1 <span id="cFrom"></span> = ? <span id="cTo"></span></label>
+      <input id="customRate" type="number" inputmode="decimal" step="any" placeholder="Leave empty to use live rate">
+    </div>
+
+    <div class="status" id="status"></div>
+
+    <table>
+      <thead><tr><th id="tblHead">All units</th><th style="text-align:right">Value</th></tr></thead>
+      <tbody id="tbl"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
